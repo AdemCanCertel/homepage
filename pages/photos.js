@@ -7,6 +7,9 @@ function PhotosPage({ data }) {
     return (
         <div className="full-container">
             <h1 className="dark:text-white text-black text-2xl md:text-3xl text-highlight font-bold">Photos</h1>
+                <div>
+                    <p>I share very few photos.</p>
+                </div>
             <figure className="mt-10 grid gap-6 sm:grid-cols-2 sm:gap-8">
                 <span className="relative box-border block overflow-hidden opacity-100 ">
                     <span className="box-border block opacity-100 ">

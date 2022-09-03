@@ -28,15 +28,15 @@ export default function Home() {
                       </div>
                         <div className='select-none'>
                         <Tippy content=
-                            {<span className='font-bold tracking-tight'>Spotify Status</span>}
+                            {<span className='font-medium tracking-tight'>Spotify Status</span>}
                           >
                           <p className='text-xl leading-7 dark:text-white text-black'>
                             {data?.isPlaying ? data.artist : 'Spotify'}
                           </p>
                         </Tippy>
-                            <p className='text-gray-700 dark:text-gray-300'>
+                            <strong className='text-neutral-700 dark:text-neutral-200'>
                                 {data?.isPlaying ? data.title : 'Not Listening'}
-                            </p>
+                            </strong>
                         </div>
                     </a>
             </section>

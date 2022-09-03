@@ -13,9 +13,6 @@ export default function Footer() {
                        <a href="/books">Books</a>
                     </li>
                     <hr/>
-                    <li>
-                       <a href="/plans">Plans</a>
-                    </li>
                     <hr/>
                     <li>
                         <a href="" className="cursor-pointer">Snippest</a>

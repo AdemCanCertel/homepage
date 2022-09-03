@@ -1,5 +1,3 @@
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css'; // optional
 import Work from '../components/Work'
 import VideoCard from '../components/videoCard';
 
@@ -7,19 +5,19 @@ import VideoCard from '../components/videoCard';
 export default function HomePage() {
     return (
     <section className='full-container'>
-            <div className='space-y-5 mt-10'>
-                <div className='dark:text-white text-black text-2xl md:text-3xl text-highlight'>
+        <div className='flex flex-col-reverse sm:flex-row items-start space-y-5 mt-10'>
+            <div className='dark:text-white text-black text-2xl md:text-3xl text-highlight'>
                     <h1 className='font-bold tracking-tight' translate='no'>Adem Can Certel</h1>
                     <h1 className='text-base'>
-                    <span className='dark:text-white leading-snug shine' translate='no'>Front-end developer, designer</span>
+                    <span className='dark:text-white leading-snug shine mb-4' translate='no'>Front-end developer, designer</span>
                     </h1>
-                </div>
-                <div className="text-lg leading-7 space-y-2 dark:text-white text-black whitespace-normal">
+                <div className="text-lg leading-7 space-y-2 mt-4 text-gray-600 dark:text-gray-400 text-opacity-100 whitespace-normal">
                     <p>Thirteen developers in Turkey. I use some technologies to make web applications.</p>
-                    <p>Most of my time is spent reading books and playing storytelling games. I share short videos of games on my YouTube channel and a design user interface with Figma.</p> <a href='/social' className="text-zinc-500 dark:text-zinc-50 decoration-2 underline underline-offset-2">Social</a>
+                    <p>Most of my time is spent reading books and playing storytelling games. I share short videos of games on my YouTube channel and a design user interface with Figma.</p> <a href='/social' className="text-zinc-500 dark:text-zinc-50 border-gray-400 hover:border-gray-500 border-b-2 border-opacity-20">Social</a>
                 </div>
+            </div>
         </div>
-        <Work/>
+            <Work/>
         <div>
             <h1 className='font-bold text-xl tracking-tight dark:text-white text-black mt-10'>
                 Figma
