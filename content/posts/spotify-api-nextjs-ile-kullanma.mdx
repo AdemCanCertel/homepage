@@ -1,0 +1,197 @@
+---
+title: Spotify API'sini Next.js ile kullanma
+excerpt: Bir Next.js API yoluyla dinlediğin parçaları getirmek için Spotify API ile nasıl kimlik doğrulaması yapacağınızı öğrenin
+image: Spotify-API.png
+category:
+  - api
+author:
+  - ademcancertel
+featured: true
+date: "24.08.2022"
+---
+
+Web sitemin en sevdiğim bölümlerinden birisi [aktiviteler](/activites) yeni teknoloji API'leri denemek için de güzel bir bölüm olduğu denebilir. Şu anda Steam, Spotify entegrasyonları vardır.
+
+Şuan da hangi oyunu oynadığımı veya Spotify hangi şarkıyı dinlediğimi göstermek istedim. Bunu başarabilmek için [Spotify'ın API'sini](https://developer.spotify.com/documentation/web-api/) Next.js [API Yoluyla](https://nextjs.org/docs/api-routes/introduction) entegra etmem gerekmekteydi. Bu gönderi sizlerde kendi websitenize spotify now playing ekleyebilmenizi sağlıyacaktır.
+
+## Uygulama Oluştur
+Öncelikle, API ile kimlik doğrulaması yapmamız için bize kimlik bilgilerimizi verecek bir Spotify uygulaması oluşturmamız gerekmektedir.
+
+- [Spotfiy Geliştirme Portalına](https://developer.spotify.com/dashboard/) gidin ve giriş yapın.
+- **Uygulama Oluştur'a** tıklayın. 
+- Spotify uygulamamızın adını ve açıklamasını belirleyelim ardından oluştur'a tıklayın.
+- **Müşteri kimliğini göster** tıklayın.
+- Müşreti kimliğiniz daha sonra size lazım olucaktır. 
+- Ayaları **Düzenle** tıkalayın arından: 
+    - `https://localhost:3000` Yeniden yönlendirme URI'si olarak ekleyin.
+
+Hepsi tamam! 🎉 Artık düzgün yapılandırılmış bir Spotify uygulamasına sahipsiniz.
+
+Kimlik doğrulama
+Uygulamanıza bağlı olarak Spotify API ile kimlik doğrulamanın çeşitli yolları vardır. Yalnızca bir kez izin verilmesine ihtiyacımız olduğundan dolayı, "Yetkilendirme Kodu Akışını" kullanıcağız.
+
+Öncelikle ihtiyacımız olan kapsamlar ile giriş yaparak uygulama istek yetkimizi alacağız işte URL'nin nasıl görünebileceğini dair bir örnek. Kendiniz için `client_id` ve kapsamları değiştirin.
+
+```
+https://accounts.spotify.com/authorize?client_id=e8f7664cf9a046a488360b0724804ef6
+&response_type=code&redirect_uri=http
+%3A%2F%2Flocalhost:3000&scope=user-read-currently-playing%20
+user-top-read
+```
+
+Yetki verdikten sonra, tekrar `redirect_uri` URL'de bir `code` sorgu parametresi var. Bu değeri kaydedin.
+
+```
+http://localhost:3000/callback?code=AQCI5..L2p03
+```
+
+Ardından, yenileme belirtecini almamız gerekecek. Daha önceki istemci kimliğini ve sırrını içeren bir Base64 kodlu dize oluşturmanız gerekecek. [Base64 çevrimiçi kod](https://www.base64encode.org/) Biçim `client_id:client_secret` şeklinde olmalıdır.
+
+```
+curl -H "Authorization: Basic CHANGE_BASE64_HERE"
+-d grant_type=authorization_code -d code=CHANGE_CODE_HERE -d redirect_uri=http%3A
+%2F%2Flocalhost:3000 https://accounts.spotify.com/api/token
+```
+
+![Spotify API Code](https://media.discordapp.net/attachments/1012381491684192358/1012381543978774619/terminal.png?width=768&height=403)
+
+Bunun gibi bir JSON alacaksınız:
+
+```json
+{
+  "access_token": "BQDKxO7h1I1wA3esGK9zCFWn97XORJEPjwAHAEIxCnDXcmy9GbEuPacquwWvpiM4d33gJVHVOP9KUxY8AXkpXc-_zRFZBfneHM2vEeV1Fbfr-0Mw94oimlNf77dRiyxPpm4IUVNLloUWgYcfkAO0",
+  "token_type": "Bearer",
+  "expires_in": 3600,
+  "refresh_token": "AQAtxXvnzRTt4c2-2_Av2WyJQKWxUW_hMVN6QNiqv2i8A2ZElVarmvdhqyc8Pf-Z5n827FTFxTpHq5E3kOsrlRWM3TuJWxjVQsW0icR0zo3BXRFLt2FB2Qfj-pFaZwY-qc8",
+  "scope": "user-read-currently-playing"
+}
+```
+
+Bu, içeren bir JSON yanıtı döndürür. `refresh_token` Bu belirteç, erişimi iptal etmediğiniz sürece [süresiz olarak geçerlidir,](https://developer.spotify.com/community/news/2016/07/25/app-ready-token-revoke/) bu nedenle bunu bir ortam değişkenine kaydetmek isteyeceğiz.
+
+## Spotify'ın API'sini kullanma
+
+Sonunda, bazı gerçek veriler elde ediyoruz! Next.js içinde dosyanızda üc yeni değer oluşturun `.env.local` .
+
+```json
+SPOTIFY_CLIENT_ID=
+SPOTIFY_CLIENT_SECRET=
+SPOTIFY_REFRESH_TOKEN=
+```
+
+> Daha önce Next'te ortam değişkenleriyle çalışmadıysanız, [okuyun.](https://nextjs.org/docs/basic-features/environment-variables)
+
+Artık müşteri kimliğimiz ve müşteri sırrımız `refresh_token` .
+
+"pages/api/spotify.js"
+```javascript
+import querystring from 'querystring';
+
+const {
+    SPOTIFY_CLIENT_ID: client_id,
+    SPOTIFY_CLIENT_SECRET: client_secret,
+    SPOTIFY_REFRESH_TOKEN: refresh_token,
+} = process.env;
+
+const basic = Buffer.from(`${client_id}:${client_secret}`).toString('base64');
+const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
+const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
+
+const getAccessToken = async () => {
+    const response = await fetch(TOKEN_ENDPOINT, {
+        method: 'POST',
+        headers: {
+            Authorization: `Basic ${basic}`,
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: querystring.stringify({
+            grant_type: 'refresh_token',
+            refresh_token,
+        }),
+    });
+
+    return response.json();
+};
+
+export const getNowPlaying = async () => {
+    const { access_token } = await getAccessToken();
+
+    return fetch(NOW_PLAYING_ENDPOINT, {
+        headers: {
+            Authorization: `Bearer ${access_token}`,
+        },
+    });
+};
+
+export default async (_, res) => {
+    const response = await getNowPlaying();
+
+    if (response.status === 204 || response.status > 400) {
+        return res.status(200).json({ isPlaying: false });
+    }
+
+    const song = await response.json();
+    const isPlaying = song.is_playing;
+    const title = song.item.name;
+    const artist = song.item.artists.map((_artist) => _artist.name).join(', ');
+    const album = song.item.album.name;
+    const albumImageUrl = song.item.album.images[0].url;
+    const songUrl = song.item.external_urls.spotify;
+
+    return res.status(200).json({
+        album,
+        albumImageUrl,
+        artist,
+        isPlaying,
+        songUrl,
+        title,
+    });
+};
+```
+
+"components/spotify.js"
+```javascript 
+{ NextSeo } from 'next-seo';
+import useSWR from 'swr';
+import { SiSpotify } from 'react-icons/si';
+
+export default function Home() {
+    const fetcher = (url) => fetch(url).then((r) => r.json());
+    const { data } = useSWR('./pages/api/spotify', fetcher);
+    return (
+    <div>
+        <NextSeo />
+            <section className='full-container'>
+                <a
+                 target='_blank'
+                 rel='noopener noreferer'
+                 className='relative flex items-center pb-5 space-x-4 rounded-md'
+                >   
+                <div className='w-16'>
+                  {data?.isPlaying ? (
+                    <img
+                     className='w-16'
+                     src={data?.albumImageUrl}
+                     alt={data?.album}
+                    />
+                  ) : (
+                    <SiSpotify size={60} color={'#1ED760'} />
+                  )}
+                </div>
+                    <div>
+                        <p className='text-xl leading-7 dark:text-white text-black'>
+                           {data?.isPlaying ? data.artist : 'Spotify'}
+                        </p>
+                        <p className='text-zinc-500 dark:text-zinc-50'>
+                           {data?.isPlaying ? data.title : 'Not Listening'}
+                        </p>
+                    </div>
+                </a>
+            </section>
+    </div>
+    );
+}
+```
+
+### Örnek
+[Kaynak kodları burada mevcuttur.](https://github.com/AdemCanCertel)

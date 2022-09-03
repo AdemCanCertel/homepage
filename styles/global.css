@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+      @apply max-w-2xl mx-auto px-4;
+      @apply dark:bg-black dark:text-gray-100 bg-gray-50 text-gray-900
+    }
+}
+
+@layer components {
+    .full-container {
+        @apply max-w-2xl mx-auto px-6
+    }
+}
+
+@media (min-width: 768px) .md\:-mx-\[20\.75vw\] {
+    margin-left: -20.90vw;
+    margin-right: -20.90vw;
+}
