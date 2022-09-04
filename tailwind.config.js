@@ -4,9 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'acik-gri': '#eeedec',
-        'koyu-gri': '#373737',
-        'koyu-mavi': '#28456c'
+        'background_color': '#18181b',
       },
       width: {
         '163px': '163px',

@@ -23,7 +23,7 @@ const Header = () => {
   
     if(currentTheme === 'dark') {
       return (
-        <Button className="w-9 h-9 dark:bg-gray-600 rounded-lg transition-all delay-100 border-none"
+        <Button className="w-9 h-9 dark:bg-neutral-800 hover:ring-1 ring-neutral-800 rounded-full transition-all delay-100 border-none"
           onClick={() => setTheme('light')}
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -33,7 +33,7 @@ const Header = () => {
       )
     } else {
       return (
-        <Button className="w-9 h-9 bg-gray-200 transition-all delay-100 border-none"
+        <Button className="w-9 h-9 bg-gray-200 hover:ring-1 ring-neutral-200 rounded-full transition-all delay-100 border-none"
           onClick={() => setTheme('dark')}
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
