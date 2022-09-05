@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function SocialPage() {
     return (
         <section className='full-container'>
-            <h1 className="text-xl font-bold">Social</h1>
+            <h1 className="font-bold text-xl tracking-tight dark:text-white text-black">Social</h1>
             <Link href="https://twitter.com/ademcancertell">
              <a target="_blank" className="pt-5 flex space-x-4 justify-between">
                 <div className="overflow-x-hidden text-xl">
@@ -70,6 +70,14 @@ export default function SocialPage() {
                 </div>
              </a>
             </Link>
+            <div className="mt-10">
+                <h1 className="font-bold text-xl tracking-tight dark:text-white text-black">Donate</h1>
+                <div className="mt-4">
+                    <a href="https://www.patreon.com/ademcan" className="bg-[#ff6871] flex space-x-4 w-full lg:w-max sm:w-max px-4 py-2 rounded">
+                        <span>Patreon</span>
+                    </a>
+                </div>
+            </div>
         </section>
     )
 }

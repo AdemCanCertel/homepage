@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 export default function Track({ title, artist, id }) {
   return (
   <div className="space-y-3 line-clamp-3 md:line-clamp-none">

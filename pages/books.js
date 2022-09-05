@@ -10,9 +10,6 @@ export default function BooksPage() {
                 <div className="dark:text-white text-black">
                     <p>Burada okuduğum kitapları ekliyorum.</p>
                 </div>
-                <div>
-                    
-                </div>
             </div>
         <BooksCard/>
     </div>
