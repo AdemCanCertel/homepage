@@ -1,6 +1,6 @@
-import Work from '../components/Work'
-import VideoCard from '../components/videoCard';
-
+import Work from '../components/Card/Projects'
+import VideoCard from '../components/Card/figmaCard';
+import Projects from '../components/Card/Projects';
 
 export default function HomePage() {
     return (
@@ -17,12 +17,21 @@ export default function HomePage() {
                 </div>
             </div>
         </div>
-            <Work/>
+        <div className="mt-20 font-bold text-xl tracking-tight dark:text-neutral-400/40 text-gray-400/80">
+            <h1>Featured Projects</h1>
+        </div>
+            <div className='flex gap-6 flex-col md:flex-row'>
+             <Projects 
+               href="https://www.figma.com/community/file/1142551475382280571"
+               title="GitHub Finder"
+               description="With Github Finder, it's easy to find programrs. Nextjs, TailwindCSS tech done using."
+             />
+            </div>
         <div>
-            <h1 className='font-bold text-xl tracking-tight dark:text-white text-black mt-10'>
+            <h1 className='font-bold text-xl tracking-tight dark:text-neutral-400/40 text-gray-400/80 mt-10'>
                 Figma
             </h1>
-            <p className='text-base text-gray-600 dark:text-gray-400'>
+            <p className='mt-2 text-base text-gray-600 dark:text-gray-400'>
                 In my spare time, I do ui apps on the Figma and share it in the YouTube and Figma community.
             </p>
             <VideoCard

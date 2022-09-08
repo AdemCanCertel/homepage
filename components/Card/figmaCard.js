@@ -1,4 +1,4 @@
-export default function videoCard({ href, title, index  }) {
+export default function figmaCard({ href, title  }) {
     return(
         <a
          className="w-full"
@@ -9,9 +9,6 @@ export default function videoCard({ href, title, index  }) {
         >
             <div className="py-1 mt-2">
                 <div className="flex flex-col sm:flex-row justify-between">
-                    <div className="flex items-center">
-                        {index}
-                    </div>
                     <h1 className="w-full text-sm font-medium text-black dark:text-white">
                         {title}
                     </h1>

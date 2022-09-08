@@ -1,11 +1,11 @@
 import NextImage from "next/image";
-import NutukImage from '../photos/Nutuk.jpeg'
-import AtaturkImage from '../photos/Ataturk.jpeg'
-import FareImage from '../photos/Farelerveİnsanlar.jpeg'
-import SiddharthaImage from '../photos/Siddhartha.jpeg'
-import DonusumImage from '../photos/Donusum.jpeg'
-import WitcherImage from '../photos/Witcher.jpeg'
-import RonesansImage from '../photos/Ronesans.jpeg'
+import NutukImage from '../../photos/Nutuk.jpeg'
+import AtaturkImage from '../../photos/Ataturk.jpeg'
+import FareImage from '../../photos/Farelerveİnsanlar.jpeg'
+import SiddharthaImage from '../../photos/Siddhartha.jpeg'
+import DonusumImage from '../../photos/Donusum.jpeg'
+import WitcherImage from '../../photos/Witcher.jpeg'
+import RonesansImage from '../../photos/Ronesans.jpeg'
 
 export default function BooksCard() {
     return (

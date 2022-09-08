@@ -1,4 +1,4 @@
-import BooksCard from '../components/BooksCard'
+import BooksCard from '../components/Card/booksCard'
 
 export default function BooksPage() {      
     return (
