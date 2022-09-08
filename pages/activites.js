@@ -3,7 +3,7 @@ import React from 'react';
 import Tippy from '@tippyjs/react';
 
 import Spotify from '../components/Spotify'
-import TracksCard from '../components/TopTracsCard/TracksCard';
+import TracksCard from '../components/Card/TopTracsCard/TracksCard';
 
 const Games = () => {
     const fetcher = (url) => fetch(url).then((res) => res.json());

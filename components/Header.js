@@ -55,7 +55,7 @@ const Header = () => {
           >{nav.label}</a></Link>
         ))}
         </div>
-          {renderThemeChanger()}
+        {renderThemeChanger()}
       </nav>
     </div>
   )
