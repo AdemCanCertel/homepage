@@ -1,8 +1,7 @@
-/** @type {import('next').NextConfig} */
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-import { withContentlayer } from 'next-contentlayer'
-
-const nextConfig = {
+/**
+ * @type {import('next').NextConfig}
+ */
+ const nextConfig = {
   reactStrictMode: true,
   webpack5: true,
   images: {
@@ -10,4 +9,4 @@ const nextConfig = {
   },
 }
 
-export default withContentlayer({ nextConfig })
+module.exports = nextConfig
