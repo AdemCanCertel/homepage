@@ -8,19 +8,19 @@ export default function HomePage() {
             <div className='dark:text-white text-black text-2xl md:text-3xl text-highlight'>
                     <h1 className='font-bold tracking-tight' translate='no'>Adem Can Certel</h1>
                     <h1 className='text-base font-semibold'>
-                    <a className='text-green-600 dark:text-gray-400'>Front-end </a>
+                    <a className='text-gray-600 dark:text-gray-100'>Front-end </a>
                     developer, designer
                     </h1>
                 <div className="text-lg leading-7 space-y-2 mt-4 text-gray-600 dark:text-gray-400 text-opacity-100 whitespace-normal">
                     <p>Thirteen developers in Turkey. I use some technologies to make web applications.</p>
-                    <p>Most of my time is spent reading books and playing storytelling games. I share short videos of games on my YouTube channel and a design user interface with Figma.</p> <a href='/social' className="text-zinc-500 dark:text-zinc-50 border-gray-400 hover:border-gray-500 border-b-2 border-opacity-20">Social</a>
+                    <p>Most of my time is spent reading books and playing storytelling games. I share short videos of games on my YouTube channel and a design user interface with Figma.</p>
                 </div>
             </div>
         </div>
-        <div className="mt-20 font-bold text-xl tracking-tight dark:text-neutral-400/40 text-gray-400">
+        <div className="mt-20 font-bold text-xl tracking-tight dark:text-white text-black">
             <h1>Featured Projects</h1>
         </div>
-            <div className='flex gap-6 flex-col md:flex-row'>
+            <div className='grid gap-5 md:grid-cols-1'>
              <Projects 
                href="https://www.figma.com/community/file/1142551475382280571"
                title="GitHub Finder"
@@ -28,7 +28,7 @@ export default function HomePage() {
              />
             </div>
         <div>
-            <h1 className='font-bold text-xl tracking-tight dark:text-neutral-400/40 text-gray-400 mt-10'>
+            <h1 className='font-bold text-xl tracking-tight dark:text-white text-black mt-10'>
                 Figma
             </h1>
             <p className='mt-2 text-base text-gray-600 dark:text-gray-400'>

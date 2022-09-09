@@ -2,10 +2,14 @@ import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import Link from "next/link"
 import Button from "../components/Button";
+import { useKBar } from "kbar";
+import { HamburgerIcon } from "@chakra-ui/icons";
+import Tippy from '@tippyjs/react';
 
 const Header = () => {
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { query } = useKBar();
   
   useEffect(() => {
     setMounted(true);
@@ -55,7 +59,20 @@ const Header = () => {
           >{nav.label}</a></Link>
         ))}
         </div>
+        <div className="flex space-x-4 items-center justify-center">
+        <Tippy content={<span className='font-medium tracking-tight'>⌘/Crtl + K</span>}>
+          <button
+           type="button"
+           aria-label="Command"
+           className="w-9 h-9 items-center justify-center bg-gray-200 ring-neutral-200 rounded-full transition-all delay-100 border-none dark:bg-neutral-800 ring-neutral-800 rounded-full transition-all delay-100 border-none"
+           onClick={query.toggle}
+          >
+          <HamburgerIcon className="w-5 h-5 -mt-1"/>
+          
+        </button>
+        </Tippy>
         {renderThemeChanger()}
+        </div>
       </nav>
     </div>
   )

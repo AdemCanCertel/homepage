@@ -19,3 +19,11 @@
     margin-left: -20.90vw;
     margin-right: -20.90vw;
 }
+
+:root {
+    --primaryColor: #f2f2f2;
+    --secondaryColor: #8f9ba8;
+    --backgroundColor: #08070b;
+    --commandColor: rgba(255, 255, 255, 0.05);
+    --hoverColor: #212024;
+}
