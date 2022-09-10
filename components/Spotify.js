@@ -31,7 +31,9 @@ export default function Home() {
                             {<span className='font-medium tracking-tight'>Spotify Status</span>}
                           >
                           <p className='text-xl leading-7 dark:text-white text-black'>
-                            {data?.isPlaying ? data.artist : 'Spotify'}
+                            <a target="_blank" href='https://open.spotify.com/user/313pix6aha7kwostg2kwtujcjesu'>
+                              {data?.isPlaying ? data.artist : 'Spotify'}
+                            </a>
                           </p>
                         </Tippy>
                             <strong className='text-neutral-700 dark:text-neutral-200'>

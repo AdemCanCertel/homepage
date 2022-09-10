@@ -36,18 +36,22 @@ const Games = () => {
         <div className="my-auto ml-3 select-none">
         <p className="dark:text-white text-black">
           <Tippy content={<span className='font-medium tracking-tight'>Steam Status</span>}>
-            <p className='text-xl'>
-              {data?.steam.getPersonName ? data?.steam.getPersonName : "%"}
-            </p>
+            <div>
+              <p className='text-xl'>
+                <a target="_blank" href='https://steamcommunity.com/id/ademcancertel/'>
+                  {data?.steam.getPersonName ? data?.steam.getPersonName : "Loading ⏳"}
+                </a>
+              </p>
+            </div>
           </Tippy>
           <div className="text-gray-700 dark:text-gray-300">
             {data?.steam.getGames === false ? (
               <strong className='text-gray-700 dark:text-gray-300'>
-                {data?.steam.getStatus ? data?.steam.getStatus : "-"}
+                {data?.steam.getStatus ? data?.steam.getStatus : "error"}
               </strong>
                 ) : (
               <strong className="text-neutral-700 dark:text-neutral-200">
-                {data?.steam.getGames}
+                {data?.steam.getGames} 🎮
               </strong>
             )}
           </div>
