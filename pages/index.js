@@ -1,5 +1,6 @@
 import FigmaCard from '../components/Card/figmaCard';
 import Projects from '../components/Card/Projects';
+import TechPage from '../components/Card/Tech';
 
 export default function HomePage() {
     return (
@@ -46,6 +47,15 @@ export default function HomePage() {
              href="https://www.figma.com/community/file/1146479270942120959"
              title="Course application with Figma"
             />
+        </div>
+        <div>
+            <div>
+                <h1 className='font-bold text-xl tracking-tight dark:text-white text-black mt-10'>Technologies I use</h1>
+                <p className='mt-2 text-base text-gray-600 dark:text-gray-400'>The web technologies and applications I use</p>
+            </div>
+            <div className='mt-4'>
+                <TechPage/>
+            </div>
         </div>
 </section>
     )

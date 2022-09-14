@@ -3,6 +3,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import { useHydrate } from "next-mdx/client";
 import Claps from "@upstash/claps";
 import { mdxComponents } from "../../components/mdx-components";
+import readingTime from "reading-time";
 
 const PostPage = ({ post }) => {
   const content = useHydrate(post, {

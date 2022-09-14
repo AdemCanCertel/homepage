@@ -17,7 +17,6 @@ const Header = () => {
   const nav = [
     { label: 'Home', path: '/' },
     { label: 'Blog', path: '/blog'},
-    { label: 'Photos', path: '/photos'},
   ];
   const renderThemeChanger = () => {
     if(!mounted) return null;

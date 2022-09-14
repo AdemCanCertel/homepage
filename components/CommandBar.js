@@ -31,6 +31,14 @@ export default function CommandBar(props) {
       perform: () => router.push("/books"),
     },
     {
+      id: "photos",
+      name: "Photos",
+      shortcut: ["p"],
+      keywords: "go-photos",
+      section: "Pages",
+      perform: () => router.push("/photos"),
+    },
+    {
       id: "repository",
       name: "Repository",
       shortcut: ["r"],
