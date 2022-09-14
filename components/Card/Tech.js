@@ -18,13 +18,13 @@ export default function TechPage() {
                 </div>
                 <div className="dark:text-gray-300/80 bg-gray-100/10 rounded-md flex items-center space-x-2 overflow-hidden">
                     <div className='p-2 rounded flex items-center justify-center'>
-                        <FaReact/>
+                        <FaReact className="w-5 h-5 text-[#5ed3f3]"/>
                     </div>
                     <span className='flex-1 text-gray-600 dark:text-gray-400'>React.js</span>
                 </div>
                 <div className="dark:text-gray-300/80 bg-gray-100/10 rounded-md flex items-center space-x-2 overflow-hidden">
                     <div className='p-2 rounded flex items-center justify-center'>
-                        <TbBrandNextjs/>
+                        <TbBrandNextjs className="w-5 h-5 text-black"/>
                     </div>
                     <span className='flex-1 text-gray-600 dark:text-gray-400'>Next.js</span>
                 </div>
