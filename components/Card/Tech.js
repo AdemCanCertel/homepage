@@ -1,7 +1,6 @@
-import { TbBrandNextjs } from 'react-icons/Tb';
-import { FaReact } from 'react-icons/Fa';
-import { SiTypescript, SiVisualstudiocode, SiJavascript } from 'react-icons/Si';
-
+import { TbBrandNextjs } from 'react-icons/tb';
+import { FaReact } from 'react-icons/fa';
+import { SiTypescript, SiVisualstudiocode, SiJavascript } from 'react-icons/si';
 
 export default function TechPage() {
     return (
