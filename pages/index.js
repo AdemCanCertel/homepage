@@ -1,7 +1,7 @@
 import FigmaCard from '../components/Card/figmaCard';
 import Projects from '../components/Card/projectsCard';
 
-export default function HomePage() {
+export default function HomePage() {      
     return (
     <section className='full-container'>
         <div className='flex flex-col-reverse sm:flex-row items-start space-y-5 mt-10'>
@@ -53,6 +53,7 @@ export default function HomePage() {
              title="Course application with Figma"
             />
         </div>
+       
 </section>
     )
 }
