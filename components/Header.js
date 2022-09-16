@@ -51,22 +51,25 @@ const Header = () => {
   return (
     <div className="pt-5 pb-5 pl-1 flex flex-col justify-center px-8">
       <nav className="flex items-center justify-between relative">
-        <div className="ml-[-0.10rem]"> 
+        <div className="ml-[-0.10rem] "> 
         {nav.map(nav => (
-          <Link href={nav.path}><a
-            className="full-container leading-snug shine"
-          >{nav.label}</a></Link>
+          <Link href={nav.path}>
+          <a
+            className="full-container leading-snug shine px-5 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-400/10 transition-all"
+          >
+            {nav.label}
+          </a>
+          </Link>
         ))}
         </div>
         <div className="flex space-x-4 items-center justify-center">
-        <Tippy content={<span className='font-medium tracking-tight'>⌘/Crtl + K</span>}>
+        <Tippy content={<span className='font-medium tracking-tight '>⌘/Crtl + K</span>}>
           <button
            type="button"
-           aria-label="Command"
-           className="transition-all duration-700 ease-in-out hover:rotate-[360deg] items-center justify-center"
+           className="w-9 h-9 bg-gray-200 dark:bg-neutral-800 rounded-full transition-all duration-700 ease-in-out hover:rotate-[360deg] items-center justify-center"
            onClick={query.toggle}
           >
-         <i class="ri-command-line"></i>
+         <i class="ri-terminal-line dark:text-white text-black"></i>
         </button>
         </Tippy>
         {renderThemeChanger()}

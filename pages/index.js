@@ -1,6 +1,5 @@
 import FigmaCard from '../components/Card/figmaCard';
 import Projects from '../components/Card/projectsCard';
-import TechCard from '../components/Card/techCard'; 
 
 export default function HomePage() {
     return (
@@ -8,9 +7,8 @@ export default function HomePage() {
         <div className='flex flex-col-reverse sm:flex-row items-start space-y-5 mt-10'>
             <div className='dark:text-white text-black text-2xl md:text-3xl text-highlight'>
                     <h1 className='text-green-400 font-bold tracking-tight' translate='no'>Adem Can</h1>
-                    <h1 className='text-base font-semibold'>
-                    <a className='text-gray-600 dark:text-gray-100'>Front-end </a>
-                    developer • designer
+                    <h1 className='text-base'>
+                    <a className='text-gray-600 dark:text-gray-100 font-semibold'>Front-end </a> developer • <span className='font-semibold'>designer</span>
                     </h1>
                 <div className="text-lg leading-7 space-y-2 mt-4 text-gray-600 dark:text-gray-400 text-opacity-100 whitespace-normal">
                     <p>Thirteen developers in Turkey. I use some technologies to make web applications.</p>
@@ -31,8 +29,8 @@ export default function HomePage() {
                   href="https://www.figma.com/community/file/1142551475382280571"
                 />
                 </div>
-                <div className='flex justify-end'>
-                    <a href='/repository' className='text-gray-400 hover:underline dark:text-neutral-700 px-4'>More Projects</a>
+                <div className='flex'>
+                    <a href='/repository' className='text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6 hover:underline'>More Projects</a>
                 </div>
             </div>
         <div>
@@ -54,17 +52,6 @@ export default function HomePage() {
              href="https://www.figma.com/community/file/1146479270942120959"
              title="Course application with Figma"
             />
-        </div>
-        <div>
-            <div>
-                <div className='flex items-center'>
-                    <h1 className='font-bold text-xl tracking-tight dark:text-white text-black mt-10'>Technologies I use</h1>
-                </div>
-                    <p className='mt-2 text-base text-gray-600 dark:text-gray-400'>The web technologies and applications I use</p>
-            </div>
-            <div className='mt-4'>
-                <TechCard/>
-            </div>
         </div>
 </section>
     )
