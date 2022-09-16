@@ -11,6 +11,9 @@ module.exports = {
       },
       width: {
         '163px': '163px',
+      },
+      rotate: {
+        '360': '360deg',
       }
     },
   },

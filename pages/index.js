@@ -1,16 +1,16 @@
 import FigmaCard from '../components/Card/figmaCard';
-import Projects from '../components/Card/Projects';
-import TechPage from '../components/Card/Tech';
+import Projects from '../components/Card/projectsCard';
+import TechCard from '../components/Card/techCard'; 
 
 export default function HomePage() {
     return (
     <section className='full-container'>
         <div className='flex flex-col-reverse sm:flex-row items-start space-y-5 mt-10'>
             <div className='dark:text-white text-black text-2xl md:text-3xl text-highlight'>
-                    <h1 className='font-bold tracking-tight' translate='no'>Adem Can Certel</h1>
+                    <h1 className='text-green-400 font-bold tracking-tight' translate='no'>Adem Can</h1>
                     <h1 className='text-base font-semibold'>
                     <a className='text-gray-600 dark:text-gray-100'>Front-end </a>
-                    developer, designer
+                    developer • designer
                     </h1>
                 <div className="text-lg leading-7 space-y-2 mt-4 text-gray-600 dark:text-gray-400 text-opacity-100 whitespace-normal">
                     <p>Thirteen developers in Turkey. I use some technologies to make web applications.</p>
@@ -19,19 +19,26 @@ export default function HomePage() {
             </div>
         </div>
         <div className="mt-20 font-bold text-xl tracking-tight dark:text-white text-black">
+        <div className='flex items-center'>
             <h1>Featured Projects</h1>
         </div>
-            <div className='grid gap-5 md:grid-cols-1'>
-             <Projects 
-               href="https://www.figma.com/community/file/1142551475382280571"
-               title="GitHub Finder"
-               description="With Github Finder, it's easy to find programrs. Nextjs, TailwindCSS tech done using."
-             />
+        </div>
+            <div>
+                <div className='grid grid-rows-1 grid-flow-col gap-4'>
+                <Projects 
+                  title="GitHub Finder"
+                  description="With Github Finder, it's easy to find programrs. Nextjs, TailwindCSS tech done using."
+                  href="https://www.figma.com/community/file/1142551475382280571"
+                />
+                </div>
+                <div className='flex justify-end'>
+                    <a href='/repository' className='text-gray-400 hover:underline dark:text-neutral-700 px-4'>More Projects</a>
+                </div>
             </div>
         <div>
-            <h1 className='font-bold text-xl tracking-tight dark:text-white text-black mt-10'>
-                Figma
-            </h1>
+            <div className='flex items-center'>
+                <h1 className='font-bold text-xl tracking-tight dark:text-white text-black mt-10'>Figma</h1>
+            </div>
             <p className='mt-2 text-base text-gray-600 dark:text-gray-400'>
                 In my spare time, I do ui apps on the Figma and share it in the YouTube and Figma community.
             </p>
@@ -50,11 +57,13 @@ export default function HomePage() {
         </div>
         <div>
             <div>
-                <h1 className='font-bold text-xl tracking-tight dark:text-white text-black mt-10'>Technologies I use</h1>
-                <p className='mt-2 text-base text-gray-600 dark:text-gray-400'>The web technologies and applications I use</p>
+                <div className='flex items-center'>
+                    <h1 className='font-bold text-xl tracking-tight dark:text-white text-black mt-10'>Technologies I use</h1>
+                </div>
+                    <p className='mt-2 text-base text-gray-600 dark:text-gray-400'>The web technologies and applications I use</p>
             </div>
             <div className='mt-4'>
-                <TechPage/>
+                <TechCard/>
             </div>
         </div>
 </section>

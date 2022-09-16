@@ -12,8 +12,11 @@ import {
 
 export default function CommandBar(props) {
   const router = useRouter();
-
+  
   const actions = [
+
+    /** Pages  */  
+      
     {
       id: "activites",
       name: "Activites",
@@ -31,6 +34,14 @@ export default function CommandBar(props) {
       perform: () => router.push("/books"),
     },
     {
+      id: "bookmarks",
+      name: "Bookmarks",
+      shortcut: ["b"],
+      keywords: "go-bookmarks",
+      section: "Pages",
+      perform: () => router.push("/"),
+    },
+    {
       id: "photos",
       name: "Photos",
       shortcut: ["p"],
@@ -44,15 +55,7 @@ export default function CommandBar(props) {
       shortcut: ["r"],
       keywords: "go-repository",
       section: "Pages",
-      perform: () => router.push("/"),
-    },
-    {
-      id: "snippest",
-      name: "Snippest",
-      shortcut: ["s"],
-      keywords: "go-snippest",
-      section: "Pages",
-      perform: () => router.push("/"),
+      perform: () => router.push("/repository"),
     },
     {
       id: "social",
@@ -130,27 +133,26 @@ const positionerStyle = {
   width: "100%",
   inset: "0px",
   padding: "14vh 16px 16px",
-  background: "rgba(0, 0, 0, .8)",
-  boxSizing: "border-box",
+  background: "rgba(0, 0, 0, .5)",
 };
 
 const animatorStyle = {
   maxWidth: "600px",
   width: "100%",
   color: "#a1a1a1",
-  borderRadius: "8px",
+  borderRadius: "10px",
   overflow: "hidden",
 };
 
 const searchStyle = {
   padding: "12px 16px",
-  fontSize: "16px",
+  fontSize: "15px",
   width: "100%",
   boxSizing: "border-box",
   outline: "none",
   border: "none",
   margin: 0,
-  background: "#171717",
+  background: "#262626",
   color: "#a1a1a1",
 };
 

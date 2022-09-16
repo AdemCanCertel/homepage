@@ -1,5 +1,5 @@
 import NextImage from "next/image";
-import Error from '../photos/404.jpg'
+import Error from '../static/photos/404.jpg'
 
 export default function error() {
     return (

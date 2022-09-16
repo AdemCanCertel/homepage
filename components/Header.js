@@ -15,8 +15,9 @@ const Header = () => {
   }, []);
 
   const nav = [
-    { label: 'Home', path: '/' },
+    { label: 'Home', path: '/'},
     { label: 'Blog', path: '/blog'},
+    //{ label: 'Bookmarks', path: '' }
   ];
   const renderThemeChanger = () => {
     if(!mounted) return null;
@@ -25,7 +26,7 @@ const Header = () => {
   
     if(currentTheme === 'dark') {
       return (
-        <Button className="w-9 h-9 dark:bg-neutral-800 hover:ring-1 ring-neutral-800 rounded-full transition-all delay-100 border-none"
+        <Button className="w-9 h-9 dark:bg-neutral-800 hover:ring-1 ring-neutral-800 rounded-full transition-all duration-700 ease-in-out hover:rotate-[360deg] border-none"
           onClick={() => setTheme('light')}
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -35,8 +36,8 @@ const Header = () => {
       )
     } else {
       return (
-        <Button className="w-9 h-9 bg-gray-200 hover:ring-1 ring-neutral-200 rounded-full transition-all delay-100 border-none"
-          onClick={() => setTheme('dark')}
+        <Button className="w-9 h-9 bg-gray-200 hover:ring-1 ring-neutral-200 rounded-full transition-all duration-700 ease-in-out hover:rotate-[360deg] border-none"  
+        onClick={() => setTheme('dark')}
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
@@ -62,7 +63,7 @@ const Header = () => {
           <button
            type="button"
            aria-label="Command"
-           className="items-center justify-center"
+           className="transition-all duration-700 ease-in-out hover:rotate-[360deg] items-center justify-center"
            onClick={query.toggle}
           >
          <i class="ri-command-line"></i>

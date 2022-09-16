@@ -1,4 +1,4 @@
-import '../styles/global.css'
+import '../static/styles/global.css'
 import 'tippy.js/dist/tippy.css'; // optional
 import "@upstash/claps/style.css";
 import 'remixicon/fonts/remixicon.css'
@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider attribute="class">
       <CommandBar>
       <Layout>
-        <GoogleAnalytics />
+        <GoogleAnalytics/>
         <Component {...pageProps} />
         <Footer/>
       </Layout>

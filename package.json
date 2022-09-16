@@ -21,10 +21,11 @@
     "@headlessui/react": "^1.7.0",
     "@heroicons/react": "^2.0.10",
     "@nextui-org/react": "^1.0.0-beta.9",
+    "@radix-ui/react-icons": "^1.1.1",
     "@silvenon/remark-smartypants": "^2.0.0",
     "@tippyjs/react": "^4.2.6",
     "@upstash/claps": "^1.0.0-beta.4",
-    "classnames": "^2.3.1",
+    "classnames": "^2.3.2",
     "framer-motion": "^7.2.0",
     "fs": "^0.0.1-security",
     "install": "^0.13.0",
@@ -51,7 +52,8 @@
     "remark-toc": "^8.0.1",
     "remark-unwrap-images": "^3.0.1",
     "remixicon": "^2.5.0",
-    "swr": "^1.3.0"
+    "swr": "^1.3.0",
+    "use-sound": "^4.0.1"
   },
   "devDependencies": {
     "@iconify/react": "^4.0.0",
