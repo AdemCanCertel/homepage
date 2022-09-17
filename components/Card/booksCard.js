@@ -8,8 +8,6 @@ import {
   HStack,
   Text,
 } from "@chakra-ui/react";
-import { BsFillBookFill } from "react-icons/Bs";
-import { MdFavorite } from "react-icons/Md";
 import NutukImage from "../../static/photos/Nutuk.jpeg";
 import AtaturkImage from "../../static/photos/Ataturk.jpeg";
 import SiddharthaImage from "../../static/photos/Siddhartha.jpeg";
@@ -24,13 +22,11 @@ export default function BooksCard() {
         <TabList className="space-x-5">
           <Tab>
             <HStack className="border px-4 pl-4 rounded-md">
-              <BsFillBookFill className="dark:text-[#8e8e93] text-[#aeaeb2]" />
               <Text>Tümü</Text>
             </HStack>
           </Tab>
           <Tab>
             <HStack className="border px-4 pl-4 rounded-md">
-              <MdFavorite className="dark:text-[#8e8e93] text-[#aeaeb2]" />
               <Text>Favoriler</Text>
             </HStack>
           </Tab>
