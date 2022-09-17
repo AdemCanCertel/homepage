@@ -55,7 +55,7 @@ const Header = () => {
         {nav.map(nav => (
           <Link href={nav.path}>
           <a
-            className="full-container leading-snug shine px-5 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-400/10 transition-all"
+            className="full-container leading-snug shine px-5 py-2 text-[#48484a] dark:text-[#aeaeb2] dark:hover:text-[#aeaeb2]  hover:text-black transition-all"
           >
             {nav.label}
           </a>

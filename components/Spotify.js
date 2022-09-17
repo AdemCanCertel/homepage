@@ -36,7 +36,7 @@ export default function Home() {
                             </a>
                           </p>
                         </Tippy>
-                            <strong className='text-neutral-700 dark:text-neutral-200'>
+                            <strong className='text-[#636366] dark:text-[#aeaeb2]'>
                                 {data?.isPlaying ? data.title : 'Not Listening'}
                             </strong>
                         </div>
