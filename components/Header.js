@@ -2,14 +2,11 @@ import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import Link from "next/link"
 import Button from "../components/Button";
-import { useKBar } from "kbar";
-import Tippy from '@tippyjs/react';
 
 const Header = () => {
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const { query } = useKBar();
-  
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -26,7 +23,7 @@ const Header = () => {
   
     if(currentTheme === 'dark') {
       return (
-        <Button className="w-9 h-9 dark:bg-neutral-800 hover:ring-1 ring-neutral-800 rounded-full transition-all duration-700 ease-in-out hover:rotate-[360deg] border-none"
+        <Button className="w-9 h-9 dark:bg-neutral-800 hover:ring-1 ring-neutral-800 rounded-md border-none"
           onClick={() => setTheme('light')}
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -36,7 +33,7 @@ const Header = () => {
       )
     } else {
       return (
-        <Button className="w-9 h-9 bg-gray-200 hover:ring-1 ring-neutral-200 rounded-full transition-all duration-700 ease-in-out hover:rotate-[360deg] border-none"  
+        <Button className="w-9 h-9 bg-gray-200 hover:ring-1 ring-neutral-200 rounded-md border-none"  
         onClick={() => setTheme('dark')}
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
@@ -63,15 +60,6 @@ const Header = () => {
         ))}
         </div>
         <div className="flex space-x-4 items-center justify-center">
-        <Tippy content={<span className='font-medium tracking-tight '>⌘/Crtl + K</span>}>
-          <button
-           type="button"
-           className="w-9 h-9 bg-gray-200 dark:bg-neutral-800 rounded-full transition-all duration-700 ease-in-out hover:rotate-[360deg] items-center justify-center"
-           onClick={query.toggle}
-          >
-         <i class="ri-terminal-line dark:text-white text-black"></i>
-        </button>
-        </Tippy>
         {renderThemeChanger()}
         </div>
       </nav>

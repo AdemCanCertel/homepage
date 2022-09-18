@@ -4,7 +4,7 @@ import { FaPatreon } from "react-icons/fa";
 export default function SocialPage() {
   return (
     <section className="full-container">
-      <h1 className="font-semibold dark:text-white text-black text-2xl md:text-3xl text-highlight">
+      <h1 className="font-bold text-xl md:text-2xl tracking-tight dark:text-white text-black">
         Social
       </h1>
       <Link href="https://twitter.com/ademcancertell">
@@ -129,21 +129,21 @@ export default function SocialPage() {
         </a>
       </Link>
       <div className="mt-10">
-        <h1 className="font-semibold text-xl tracking-tight dark:text-white text-black">
+        <h1 className="font-bold text-xl md:text-2xl tracking-tight dark:text-white text-black">
           Donate
         </h1>
         <div className="mt-4 grid grid-cols-4 gap-4">
           <a
             href="https://www.patreon.com/ademcan"
             target="_blank"
-            className="px-4 py-2 flex space-x-4 hover:text-gray-400/100 transition delay-75"
+            className="text-gray-500 hover:text-gray-600 px-4 py-2 flex space-x-4 transition-all"
           >
             <span className="font-semibold">Patreon</span>
           </a>
           <a
             href="https://superpeer.com/ademcancertel"
             target="_blank"
-            className="px-4 py-2 flex space-x-4 hover:text-gray-400/100 transition delay-75"
+            className="text-gray-500 hover:text-gray-600 px-4 py-2 flex space-x-4 transition-all"
           >
             <span className="font-semibold">Superpeer</span>
           </a>

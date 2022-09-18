@@ -6,7 +6,7 @@ import { getPhotos } from "../lib/unsplash";
 function PhotosPage({ data }) {
   return (
     <div className="full-container">
-      <h1 className="font-semibold dark:text-white text-black text-2xl md:text-3xl text-highlight">
+      <h1 className="font-bold text-xl md:text-2xl tracking-tight dark:text-white text-black">
         Photos
       </h1>
       <div>

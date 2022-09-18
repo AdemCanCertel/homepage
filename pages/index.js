@@ -7,10 +7,10 @@ export default function HomePage() {
       <div className="flex flex-col-reverse sm:flex-row items-start space-y-5 mt-10">
         <div className="dark:text-white text-black text-2xl md:text-3xl text-highlight">
           <h1
-            className="text-green-400 font-bold tracking-tight"
+            className="font-bold text-2xl md:text-3xl tracking-tight mb-1 text-black dark:text-white"
             translate="no"
           >
-            Adem Can
+            Adem Can Certel
           </h1>
           <h1 className="text-base">
             <a className="text-gray-600 dark:text-gray-100 font-semibold">
@@ -18,7 +18,7 @@ export default function HomePage() {
             </a>{" "}
             developer • <span className="font-semibold">designer</span>
           </h1>
-          <div className="text-lg leading-7 space-y-2 mt-4 text-gray-600 dark:text-gray-400 text-opacity-100 whitespace-normal">
+          <div className="text-lg leading-7 space-y-2 mt-4 text-gray-600 dark:text-gray-400 whitespace-normal">
             <p>
               Thirteen developers in Turkey. I use some technologies to make web
               applications.
@@ -31,13 +31,13 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="mt-20 font-semibold text-xl tracking-tight dark:text-white text-black">
-        <div className="flex items-center">
-          <h1>Featured Projects</h1>
-        </div>
+      <div className="flex items-center">
+        <h1 className="font-bold text-xl md:text-2xl tracking-tight dark:text-white text-black mt-20">
+          Featured Projects
+        </h1>
       </div>
       <div>
-        <div className="grid grid-rows-1 grid-flow-col gap-4">
+        <div className="flex gap-6 flex-col md:flex-row">
           <Projects
             title="GitHub Finder"
             description="With Github Finder, it's easy to find programrs. Nextjs, TailwindCSS tech done using."
@@ -47,15 +47,15 @@ export default function HomePage() {
         <div className="flex">
           <a
             href="/repository"
-            className="text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6 hover:underline"
+            className="flex items-center text-gray-600 dark:text-gray-400 leading-7 rounded-md hover:text-gray-800 dark:hover:text-gray-200 transition-all"
           >
-            More Projects
+            More projects
           </a>
         </div>
       </div>
       <div>
         <div className="flex items-center">
-          <h1 className="font-semibold text-xl tracking-tight dark:text-white text-black mt-10">
+          <h1 className="font-bold text-xl md:text-2xl tracking-tight dark:text-white text-black mt-20">
             Figma
           </h1>
         </div>

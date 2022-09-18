@@ -12,9 +12,9 @@ const Games = () => {
   return (
     <>
       <section className="mb-16 full-container">
-        <div className="dark:text-white text-black text-2xl md:text-3xl text-highlight">
-          <h1 className="font-semibold">Activites</h1>
-          <div className="mb-4 text-lg text-gray-600 dark:text-gray-400">
+        <div className="text-xl md:text-2xl tracking-tight dark:text-white text-black">
+          <h1 className="font-bold">Activites</h1>
+          <div className="mb-4 text-lg leading-7 space-y-2 mt-4 text-gray-600 dark:text-gray-400 whitespace-normal">
             <p>
               Here you can see my steam gaming activities and my spotify tracks.
             </p>
@@ -82,7 +82,7 @@ const Games = () => {
       </section>
       <div className="full-container">
         <div>
-          <h1 className="font-semibold dark:text-white text-black text-2xl md:text-3xl text-highlight">
+          <h1 className="font-bold text-xl md:text-2xl tracking-tight dark:text-white text-black">
             Top Tracks
           </h1>
           <div className="mt-4">

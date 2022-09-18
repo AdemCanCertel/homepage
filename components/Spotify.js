@@ -3,7 +3,7 @@ import useSWR from 'swr';
 import Tippy from '@tippyjs/react';
 import { SiSpotify } from 'react-icons/si';
 
-export default function Home() {
+export default function Spotify() {
     const fetcher = (url) => fetch(url).then((r) => r.json());
     const { data } = useSWR('/api/spotify', fetcher);
     return (

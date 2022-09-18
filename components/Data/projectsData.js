@@ -7,13 +7,13 @@ export const projects = [
     },
     {
         title: "Homepage",
-        description: "Source code my personal website is written using Next.js, Tailwind CSS and Chakra UI",
+        description: "✨My personal website is written with Nextjs and the style layout is made with Tailwind CSS. With Vercel is hosted.",
         source: "https://github.com/AdemCanCertel/homepage",
         id: 1,
     },
     {
         title: "Twitter",
-        description: "Next.js and Tailwind use CSS technologies to create a Twitter Clone",
+        description: "I'm doing the Twitter front interface clone with Next.js.",
         source: "https://github.com/AdemCanCertel/twitter",
         id: 3,
     },
