@@ -12,9 +12,6 @@ export default function Footer() {
                     <Link href="/books">
                         <a className="text-gray-500 hover:text-gray-600">Books</a>
                     </Link>
-                    <Link href="/bookmarks">
-                        <a className="text-gray-500 hover:text-gray-600">Bookmarks</a>
-                    </Link>
                     <Link href="/photos">
                         <a className="text-gray-500 hover:text-gray-600">Photos</a>
                     </Link>
