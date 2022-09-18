@@ -1,7 +1,6 @@
 ---
 title: Spotify API'sini Next.js ile kullanma
-excerpt: Bir Next.js API yoluyla dinlediğin parçaları getirmek için Spotify API ile nasıl kimlik doğrulaması yapacağınızı öğrenin
-image: Spotify-API.png
+excerpt: Next.js API yoluyla dinlediğin parçaları getirmek için Spotify API ile nasıl kimlik doğrulaması yapacağınızı öğrenin
 category:
   - api
 author:
@@ -10,28 +9,27 @@ featured: true
 date: "24.08.2022"
 ---
 
-Web sitemin en sevdiğim bölümlerinden birisi [aktiviteler](/activites) yeni teknoloji API'leri denemek için de güzel bir bölüm olduğu denebilir. Şu anda Steam, Spotify entegrasyonları vardır.
+Web sitemin en sevdiğim bölümlerinden birisi [aktiviteler](/activites) yeni teknoloji API'leri denemek için de güzel bir bölüm olduğu denilebilir. Şu anda Steam, Spotify entegrasyonları vardır.
 
-Şuan da hangi oyunu oynadığımı veya Spotify hangi şarkıyı dinlediğimi göstermek istedim. Bunu başarabilmek için [Spotify'ın API'sini](https://developer.spotify.com/documentation/web-api/) Next.js [API Yoluyla](https://nextjs.org/docs/api-routes/introduction) entegra etmem gerekmekteydi. Bu gönderi sizlerde kendi websitenize spotify now playing ekleyebilmenizi sağlıyacaktır.
+Hangi oyunu oynadığımı ve Spotify da hangi şarkıyı dinlediğimi göstermek istedim. Bunu başarabilmek için [Spotify'ın API'sini](https://developer.spotify.com/documentation/web-api/) Next.js [API Yoluyla](https://nextjs.org/docs/api-routes/introduction) entegra etmem gerekmekteydi. Bu gönderimde sizlere Spotify API ile sitenize anlık dinlediğiniz şarkıyı canlı olarak göstereceğim.
 
 ## Uygulama Oluştur
 
-Öncelikle, API ile kimlik doğrulaması yapmamız için bize kimlik bilgilerimizi verecek bir Spotify uygulaması oluşturmamız gerekmektedir.
+Öncelikle, Spotify API kullanmamız için kimlik oluşturmamız lazım, aşşağıdaki aşamalar ile ilerleyelim.
 
-- [Spotfiy Geliştirme Portalına](https://developer.spotify.com/dashboard/) gidin ve giriş yapın.
-- **Uygulama Oluştur'a** tıklayın.
-- Spotify uygulamamızın adını ve açıklamasını belirleyelim ardından oluştur'a tıklayın.
-- **Müşteri kimliğini göster** tıklayın.
-- Müşreti kimliğiniz daha sonra size lazım olucaktır.
-- Ayaları **Düzenle** tıkalayın arından:
-  - `https://localhost:3000` Yeniden yönlendirme URI'si olarak ekleyin.
+- [Spotfiy Geliştirme Portalına](https://developer.spotify.com/dashboard/) adresine gidin ardından Spotify hesabımız ile giriş yaptıktan sonra.
+- **Uygulama Oluştur'a** tıklayalım.
+- Spotify uygulamamızın adını ve açıklamasını belirleyelim, ardından oluştur'a tıklayalım.
+- **Müşteri kimliğini göster**'e tıklayalım.
+- **Müşteri Kimliğimiz**(Client ID) daha sonra bize lazım olucak.
+- Ayarlar>Düzenle tıklayalım ve:
+  - **"https://localhost:3000"** Yeniden yönlendirme URI'si olarak ekleyin.
 
-Hepsi tamam! 🎉 Artık düzgün yapılandırılmış bir Spotify uygulamasına sahipsiniz.
+Hepsi tamam! ✨ Artık düzgün ve yapılandırılmış bir Spotify uygulamamız var.
 
-Kimlik doğrulama
-Uygulamanıza bağlı olarak Spotify API ile kimlik doğrulamanın çeşitli yolları vardır. Yalnızca bir kez izin verilmesine ihtiyacımız olduğundan dolayı, "Yetkilendirme Kodu Akışını" kullanıcağız.
+Kimlik doğrulama uygulamamıza bağlı olarak Spotify API ile kimlik doğrulamanın çeşitli yolları vardır. Yalnızca bir kez izin verilmesine ihtiyacımız olduğundan dolayı, "Yetkilendirme Kodu Akışını" kullanıcağız.
 
-Öncelikle ihtiyacımız olan kapsamlar ile giriş yaparak uygulama istek yetkimizi alacağız işte URL'nin nasıl görünebileceğini dair bir örnek. Kendiniz için `client_id` ve kapsamları değiştirin.
+Öncelikle ihtiyacımız olan kapsamlar ile giriş yaparak uygulama istek yetkimizi alacağız işte URL'nin nasıl görünebileceğini dair bir örnek. Kendiniz için "client_id" ve kapsamları değiştirin.
 
 ```
 https://accounts.spotify.com/authorize?client_id=e8f7664cf9a046a488360b0724804ef6
@@ -40,13 +38,13 @@ https://accounts.spotify.com/authorize?client_id=e8f7664cf9a046a488360b0724804ef
 user-top-read
 ```
 
-Yetki verdikten sonra, tekrar "redirect_uri" URL'de bir "code" sorgu parametresi var. Bu değeri kaydedin.
+Yetki verdikten sonra, tekrar "redirect_uri" URL'de bir "code" sorgu parametresi var. Bu değeri kaydedelim.
 
 ```
 http://localhost:3000/callback?code=AQCI5..L2p03
 ```
 
-Ardından, yenileme belirtecini almamız gerekecek. Daha önceki istemci kimliğini ve sırrını içeren bir Base64 kodlu dize oluşturmanız gerekecek. [Base64 çevrimiçi kod](https://www.base64encode.org/) Biçim `client_id:client_secret` şeklinde olmalıdır.
+Ardından, yenileme belirtecini almamız gerekecek. Daha önceki istemci kimliğini ve sırrını içeren bir **Base64** kodlu dize oluşturmamız gerekecek. [Base64 çevrimiçi kod](https://www.base64encode.org/), "client_id:client_secret" şeklinde olmalıdır.
 
 ```
 curl -H "Authorization: Basic CHANGE_BASE64_HERE"
@@ -56,7 +54,7 @@ curl -H "Authorization: Basic CHANGE_BASE64_HERE"
 
 ![Spotify API Code](https://media.discordapp.net/attachments/1012381491684192358/1012381543978774619/terminal.png?width=768&height=403)
 
-Bunun gibi bir JSON alacaksınız:
+Terminal da gösterdiğim gibi JSON aldıktan sonra:
 
 ```json
 {
@@ -68,11 +66,11 @@ Bunun gibi bir JSON alacaksınız:
 }
 ```
 
-Bu, içeren bir JSON yanıtı döndürür. `refresh_token` Bu belirteç, erişimi iptal etmediğiniz sürece [süresiz olarak geçerlidir,](https://developer.spotify.com/community/news/2016/07/25/app-ready-token-revoke/) bu nedenle bunu bir ortam değişkenine kaydetmek isteyeceğiz.
+Bu, içeren bir JSON yanıtı döndürür. "refresh_token" Bu belirteç, erişimi iptal etmediğimiz sürece [süresiz olarak geçerlidir,](https://developer.spotify.com/community/news/2016/07/25/app-ready-token-revoke/) bu nedenle bunu bir ortam değişkenine kaydetmek isteyeceğiz.
 
 ## Spotify'ın API'sini kullanma
 
-Sonunda, bazı gerçek veriler elde ediyoruz! Next.js içinde dosyanızda üc yeni değer oluşturun `.env.local` .
+Sonunda, bazı gerçek veriler elde ediyoruz! Next.js içinde dosyanızda üc yeni değer oluşturalım ".env.local".
 
 ```json
 SPOTIFY_CLIENT_ID=
@@ -82,11 +80,10 @@ SPOTIFY_REFRESH_TOKEN=
 
 > Daha önce Next'te ortam değişkenleriyle çalışmadıysanız, [okuyun.](https://nextjs.org/docs/basic-features/environment-variables)
 
-Artık müşteri kimliğimiz ve müşteri sırrımız `refresh_token` .
-
-"pages/api/spotify.js"
+Artık müşteri kimliğimiz ve müşteri sırrımız. "refresh_token"
 
 ```javascript
+"pages/api/spotify.js"
 import querystring from "querystring";
 
 const {
@@ -151,9 +148,8 @@ export default async (_, res) => {
 };
 ```
 
-"components/spotify.js"
-
 ```javascript
+"components/spotify.js"
 { NextSeo } from 'next-seo';
 import useSWR from 'swr';
 import { SiSpotify } from 'react-icons/si';
@@ -196,6 +192,5 @@ export default function Home() {
 }
 ```
 
-### Örnek
-
-[Kaynak kodları burada mevcuttur.](https://github.com/AdemCanCertel)
+### Kaynak kodlar
+[Kaynak kodları burada mevcuttur.](https://github.com/AdemCanCertel/homepage)

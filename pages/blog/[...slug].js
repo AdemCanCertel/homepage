@@ -1,6 +1,7 @@
+import React from "react"
 import { getMdxNode, getMdxPaths } from "next-mdx/server";
 import { useHydrate } from "next-mdx/client";
-import Claps from "@upstash/claps";
+
 import { mdxComponents } from "../../components/mdx-components";
 
 const PostPage = ({ post }) => {
@@ -24,7 +25,7 @@ const PostPage = ({ post }) => {
             <p className="text-sm text-gray-700 dark:text-gray-300 ml-2">
               Adem Can Certel /
             </p>
-            <div className="flex justify-between space-x-1 px-1 pl-1">
+            <div className="text-sm text-gray-700 dark:text-gray-300 flex justify-between space-x-1 px-1 pl-1">
               {post.frontMatter.date}
             </div>
           </div>
