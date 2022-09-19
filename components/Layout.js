@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="shortcut icon" href="https://pbs.twimg.com/profile_images/1559300390977507330/Bq5EzTJv_400x400.jpg" type="image/x-icon"/>
+        <link rel="shortcut icon" href="../static/photos/favicon.png"/>
         <script type="text/javascript" src="/static/script.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       </Head>

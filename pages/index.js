@@ -12,23 +12,25 @@ export default function HomePage() {
           >
             Adem Can Certel
           </h1>
-          <h1 className="text-base">
-            <a className="text-gray-600 dark:text-gray-100 font-semibold">
-              Front-end{" "}
-            </a>{" "}
-            developer • <span className="font-semibold">designer</span>
-          </h1>
-          <div className="text-lg leading-7 space-y-2 mt-4 text-gray-600 dark:text-gray-400 whitespace-normal">
-            <p>
-              Thirteen developers in Turkey. I use some technologies to make web
-              applications.
-            </p>
-            <p>
-              Most of my time is spent reading books and playing storytelling
-              games. I share short videos of games on my YouTube channel and a
-              design user interface with Figma.
-            </p>
-          </div>
+        </div>
+      </div>
+      <div>
+        <h1 className="text-base">
+          <a className="text-gray-600 dark:text-gray-100 font-semibold">
+            Front-end{" "}
+          </a>{" "}
+          developer • <span className="font-semibold">designer</span>
+        </h1>
+        <div className="text-lg leading-7 space-y-2 mt-4 text-gray-600 dark:text-gray-400 whitespace-normal">
+          <p>
+            Thirteen developers in Turkey. I use some technologies to make web
+            applications.
+          </p>
+          <p>
+            Most of my time is spent reading books and playing storytelling
+            games. I share short videos of games on my YouTube channel and a
+            design user interface with Figma.
+          </p>
         </div>
       </div>
       <div className="flex items-center">
