@@ -82,7 +82,7 @@ export default function HomePage() {
           title="Course application with Figma"
         />
       </div>
-      <div className="mx-auto px-6 mt-20">
+      <div className="max-w-screen-xl mx-auto px-6 mt-20">
         <Tippy
           placement="bottom"
           theme="light"
