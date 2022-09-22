@@ -1,3 +1,7 @@
+import Image from "next/image";
+import Tippy from "@tippyjs/react";
+
+import MustafaKemalAtaturk from "../static/photos/MustafaKemalAtaturk.jpg";
 import FigmaCard from "../components/Card/figmaCard";
 import Projects from "../components/Card/projectsCard";
 
@@ -23,7 +27,7 @@ export default function HomePage() {
         </h1>
         <div className="text-lg leading-7 space-y-2 mt-4 text-gray-600 dark:text-gray-400 whitespace-normal">
           <p>
-            Thirteen developers in Turkey. I use some technologies to make web
+            Front-end developers in Turkey. I use some technologies to make web
             applications.
           </p>
           <p>
@@ -77,6 +81,29 @@ export default function HomePage() {
           href="https://www.figma.com/community/file/1146479270942120959"
           title="Course application with Figma"
         />
+      </div>
+      <div className="mx-auto px-6 mt-20">
+        <Tippy
+          placement="bottom"
+          theme="light"
+          content={
+            <span className="font-medium tracking-tight">
+              Mustafa Kemal Atatürk
+            </span>
+          }
+        >
+          <span className="box-border block overflow-hidden relative scale-125">
+            <Image
+              src={MustafaKemalAtaturk}
+              priority
+              quality={100}
+              width={3609}
+              height={2404}
+              layout="responsive"
+              className="rounded-lg shadow-xl"
+            />
+          </span>
+        </Tippy>
       </div>
     </section>
   );

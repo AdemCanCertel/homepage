@@ -47,8 +47,8 @@ const Header = () => {
 
   return (
     <div className="pt-5 pb-5 pl-1 flex flex-col justify-center px-8">
-      <nav className="flex items-center justify-between relative">
-        <div className="ml-[-0.10rem] "> 
+      <nav className="flex items-center justify-between relive">
+        <div className="ml-[-0.10rem]"> 
         {nav.map(nav => (
           <Link href={nav.path}>
           <a
@@ -59,9 +59,7 @@ const Header = () => {
           </Link>
         ))}
         </div>
-        <div className="flex space-x-4 items-center justify-center">
         {renderThemeChanger()}
-        </div>
       </nav>
     </div>
   )
