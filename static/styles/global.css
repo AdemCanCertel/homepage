@@ -27,3 +27,7 @@
     --commandColor: rgba(255, 255, 255, 0.05);
     --hoverColor: #212024;
 }
+
+.objectFit {
+    object-fit: cover
+}
