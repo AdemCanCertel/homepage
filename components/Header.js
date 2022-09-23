@@ -14,7 +14,7 @@ const Header = () => {
   const nav = [
     { label: "Home", path: "/" },
     { label: "Blog", path: "/blog" },
-    //{ label: 'Bookmarks', path: '' }
+    { label: "Bookmarks", path: "/" }
   ];
   const renderThemeChanger = () => {
     if (!mounted) return null;
@@ -74,7 +74,7 @@ const Header = () => {
           <div className="ml-[-0.10rem]">
             {nav.map((nav) => (
               <Link href={nav.path}>
-                <a className="full-container leading-snug shine px-5 py-2 text-gray-500 hover:text-gray-600 transition-all">
+                <a className="text-gray-500 hover:text-gray-600 transition-all leading-snug shine px-5 py-2">
                   {nav.label}
                 </a>
               </Link>

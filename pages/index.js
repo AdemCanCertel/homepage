@@ -20,10 +20,10 @@ export default function HomePage() {
       </div>
       <div>
         <h1 className="text-base">
-          <a className="text-gray-600 dark:text-gray-100 font-semibold">
+          <a className="text-gray-600 dark:text-gray-400 font-semibold">
             Front-end{" "}
           </a>{" "}
-          developer • <span className="font-semibold">designer</span>
+          developer • <span className="font-semibold text-gray-600 dark:text-gray-400">designer</span>
         </h1>
         <div className="text-lg leading-7 space-y-2 mt-4 text-gray-600 dark:text-gray-400 whitespace-normal">
           <p>

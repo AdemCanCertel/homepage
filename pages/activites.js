@@ -86,7 +86,6 @@ const Games = () => {
           </h1>
           <div className="mt-4">
             <TracksCard />
-           
           </div>
         </div>
       </div>

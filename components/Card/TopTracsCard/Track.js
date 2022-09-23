@@ -20,9 +20,9 @@ export default function Track({ url, title, artist, coverImage, id }) {
           <h2 className="font-medium text-gray-900 dark:text-gray-100">
             {title}
           </h2>
-          <strong className="text-gray-500 mb-4 truncate w-60 sm:w-96 md:w-full">
+          <p className="text-gray-600 dark:text-gray-400 w-60 sm:w-96 md:w-full">
             {artist}
-          </strong>
+          </p>
         </div>
         <hr className="w-56 opacity-5" />
       </div>

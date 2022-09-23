@@ -1,7 +1,9 @@
-import ms from "ms";
 import Image from "next/image";
 import Link from "next/link";
+import ms from "ms";
+
 import { getPhotos } from "../lib/unsplash";
+import Head from "next/head";
 
 function PhotosPage({ data }) {
   return (
@@ -9,9 +11,6 @@ function PhotosPage({ data }) {
       <h1 className="font-bold text-xl md:text-2xl tracking-tight dark:text-white text-black">
         Photos
       </h1>
-      <div>
-        <p>I share very few photos.</p>
-      </div>
       <figure className="mt-10 grid gap-6 sm:grid-cols-2 sm:gap-8">
         <span className="relative box-border block overflow-hidden opacity-100 ">
           <span className="box-border block opacity-100 ">
