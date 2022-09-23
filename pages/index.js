@@ -95,6 +95,7 @@ export default function HomePage() {
           <span className="box-border block overflow-hidden relative scale-125">
             <Image
               src={MustafaKemalAtaturk}
+              alt="Mustafa Kemal Atatürk"
               priority
               quality={100}
               width={3609}
