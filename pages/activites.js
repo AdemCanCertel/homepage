@@ -8,9 +8,6 @@ import TracksCard from "../components/Card/TopTracsCard/TracksCard";
 const Games = () => {
   const fetcher = (url) => fetch(url).then((res) => res.json());
   const { data } = useSWR("/api/steamactivite", fetcher);
-  const { data: topTracks } = useSWR("/api/tracks", fetcher);
-  const { data: artists } = useSWR("/api/artists", fetcher);
-
   return (
     <>
       <section className="mb-16 full-container">
