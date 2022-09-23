@@ -9,15 +9,17 @@ export default function () {
 
   return (
     <div>
-      {topTracks?.map((track, index) => (
-        <Track
-          key={index}
-          id={index}
-          track={track}
-          title={track.title}
-          artist={track.artist}
-        />
-      ))}
+       {topTracks?.map((track, index) => (
+              <Track
+                key={index}
+                id={index}
+                track={track}
+                url={track.url}
+                title={track.title}
+                coverImage={track.coverImage.url}
+                artist={track.artist}
+              />
+            ))}
     </div>
   );
 }
