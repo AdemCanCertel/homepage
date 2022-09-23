@@ -100,7 +100,7 @@ export default function HomePage() {
               width={3609}
               height={2404}
               layout="responsive"
-              className="rounded-lg shadow-xl"
+              className="rounded-lg shadow-xl objectFit"
             />
           </span>
         </Tippy>
