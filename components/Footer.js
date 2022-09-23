@@ -7,19 +7,19 @@ export default function Footer() {
             <div className="w-full max-w-2xl grid grid-cols-1 gap-4 pb-16 sm:gird-cols-3">
                 <div className="flex flex-col space-y-4">
                     <Link href="/activites">
-                        <a className="text-gray-500 hover:text-gray-600">Activites</a>
+                        <a className="">Activites</a>
                     </Link>
                     <Link href="/books">
-                        <a className="text-gray-500 hover:text-gray-600">Books</a>
+                        <a className="">Books</a>
                     </Link>
                     <Link href="/photos">
-                        <a className="text-gray-500 hover:text-gray-600">Photos</a>
+                        <a className="">Photos</a>
                     </Link>
                     <Link href="/repository">
-                        <a className="text-gray-500 hover:text-gray-600">Repository</a>
+                        <a className="">Repository</a>
                     </Link>
                     <Link href="/social">
-                        <a className="text-gray-500 hover:text-gray-600">Social</a>
+                        <a className="">Social</a>
                     </Link>
                 </div>
             </div>
