@@ -24,6 +24,7 @@ const Header = () => {
     if (currentTheme === "dark") {
       return (
         <Button
+          aria-label="Theme/Dark"
           className="w-9 h-9 dark:bg-neutral-800 hover:ring-1 ring-neutral-800 rounded-md border-none"
           onClick={() => setTheme("light")}
         >
@@ -45,6 +46,7 @@ const Header = () => {
     } else {
       return (
         <Button
+          aria-label="Theme/Light"
           className="w-9 h-9 bg-gray-200 hover:ring-1 ring-neutral-200 rounded-md border-none"
           onClick={() => setTheme("dark")}
         >
