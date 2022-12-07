@@ -3,7 +3,6 @@ import React from "react";
 import Tippy from "@tippyjs/react";
 
 import Spotify from "../components/Spotify";
-import TracksCard from "../components/Card/TopTracsCard/TracksCard";
 
 const Games = () => {
   const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -79,16 +78,6 @@ const Games = () => {
           </div>
         </div>
       </section>
-      <div className="full-container">
-        <div>
-          <h1 className="font-bold text-xl md:text-2xl tracking-tight dark:text-white text-black">
-            Top Tracks
-          </h1>
-          <div className="mt-4">
-            <TracksCard />
-          </div>
-        </div>
-      </div>
     </>
   );
 };

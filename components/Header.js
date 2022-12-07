@@ -14,7 +14,7 @@ const Header = () => {
   const nav = [
     { label: "Home", path: "/" },
     { label: "Blog", path: "/blog" },
-    { label: "Bookmarks", path: "/" }
+    { label: "Repository", path: "/repository" }
   ];
   const renderThemeChanger = () => {
     if (!mounted) return null;
