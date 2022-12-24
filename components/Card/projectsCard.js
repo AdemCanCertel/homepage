@@ -2,7 +2,7 @@ import { projects } from "../Data/projectsData";
 
 export default function Projects() {
   return (
-    <div className="mt-4 flex space-x-4 transition-all" id="projects">
+    <div className="flex transition-all" id="projects">
       {projects.map(({ id, title, description, source }) => (
         <div
           id={id}

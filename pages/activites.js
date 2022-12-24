@@ -2,22 +2,18 @@ import useSWR from "swr";
 import React from "react";
 import Tippy from "@tippyjs/react";
 
-import Spotify from "../components/Spotify";
-
 const Games = () => {
   const fetcher = (url) => fetch(url).then((res) => res.json());
   const { data } = useSWR("/api/steamactivite", fetcher);
   return (
     <>
       <section className="mb-16 full-container">
-        <div className="text-xl md:text-2xl tracking-tight dark:text-white text-black">
-          <h1 className="font-bold">Activites</h1>
-          <div className="mb-4 text-lg leading-7 space-y-2 mt-4 text-gray-600 dark:text-gray-400 whitespace-normal">
+          <h1 className="font-semibold text-xl md:text-2xl text-neutral-700 dark:text-neutral-200">Activites</h1>
+          <div className="text-base text-gray-600 dark:text-gray-400">
             <p>
-              Here you can see my steam gaming activities and my spotify tracks.
+              Here you can see my steam gaming activities.
             </p>
           </div>
-        </div>
         <div className="mt-10 rounded-lg items-center border border-black dark:border-white dark:border-opacity-10 border-opacity-10">
           <div className="flex py-6 my-auto rounded-md">
             <div className="flex my-auto ml-6 mr-4">
@@ -71,10 +67,6 @@ const Games = () => {
                 </p>
               </div>
             </div>
-          </div>
-          <hr className="pb-5 dark:opacity-10" />
-          <div>
-            <Spotify />
           </div>
         </div>
       </section>
