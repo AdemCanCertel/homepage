@@ -13,8 +13,8 @@ const Header = () => {
 
   const nav = [
     { label: "Home", path: "/" },
-    { label: "Blog", path: "/blog" },
-    { label: "Repository", path: "/repository" }
+    { label: "Repository", path: "/repository" },
+    { label: "Social", path: "/social" }
   ];
   const renderThemeChanger = () => {
     if (!mounted) return null;
@@ -72,7 +72,7 @@ const Header = () => {
   return (
     <div className="pt-5 pb-5 pl-1 flex flex-col justify-center px-8">
       <header className="">
-        <nav className="flex items-center justify-between relive">
+        <nav className="flex items-center justify-between relive dark:text-neutral-400 text-neutral-400">
           <div className="ml-[-0.10rem]">
             {nav.map((nav) => (
               <Link href={nav.path}>

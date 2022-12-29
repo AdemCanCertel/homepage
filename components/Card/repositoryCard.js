@@ -1,6 +1,6 @@
 const Repository = ({ title, description, href, lang }) => (
   <a href={href} target="_blank">
-    <div className="rounded flex flex-col h-full w-full transition-colors justify-between hover:bg-gray-400/10 dark:hover-bg-neutral-800/40 p-4">
+    <div className="flex flex-col justify-between p-4 rounded-md">
       <div className="space-y-2">
         <div className="flex-2 justify-between space-x-2 text-black dark:text-white">
           <h1> {title} </h1>

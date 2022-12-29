@@ -9,7 +9,7 @@ export default function figmaCard({ href, title }) {
     >
       <div className="py-1 mt-2">
         <div className="flex flex-col sm:flex-row justify-between">
-          <h1 className="w-full text-sm font-medium hover:underline underline-offset-4 text-black dark:text-gray-300/80">
+          <h1 className="w-full text-sm font-medium hover:underline underline-offset-4 text-gray-600 dark:text-gray-400">
             {title}
           </h1>
         </div>
