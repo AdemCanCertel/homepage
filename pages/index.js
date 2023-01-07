@@ -6,51 +6,48 @@ export default function HomePage() {
       <div className="flex flex-col-reverse sm:flex-row items-start space-y-5 mt-10">
         <div className="dark:text-white text-black text-2xl md:text-3xl text-highlight">
           <h1
-            className="font-semibold text-2xl md:text-3xl tracking-tight mb-1 dark:text-neutral-400 text-neutral-500"
+            className="font-bold text-zinc-900 dark:text-zinc-300 text-2xl md:text-3xl tracking-tight mb-1"
             translate="no"
           >
-            Adem Can
+            Hi, I'm Adem Can
           </h1>
         </div>
       </div>
       <div>
-        <h1 className="text-base">
-          <a className="dark:text-neutral-400 text-neutral-500 font-semibold">
-            Front-end developer
-          </a>
-        </h1>
-        <div className="text-lg leading-7 space-y-2 text-gray-600 dark:text-gray-400">
+        <div className="text-lg leading-7 space-y-2 text-zinc-900 dark:text-zinc-400">
           <p>
-          I am a front-end developer from Turkey and I am making applications using some web technologies.
+          Front-end Developer in Turkey. I do UI/UX designs and I do pixel designs with Aseprite application, I make objects with Blender 3D.
           </p>
         </div>
       </div>
       <div>
         <div className="flex items-center">
-          <h1 className="font-semibold text-semibold md:text-2xl mt-16 dark:text-neutral-400 text-neutral-500">
+          <h1 className="font-bold text-zinc-900 dark:text-zinc-300 text-2xl md:text-3xl mt-16">
             Figma
           </h1>
         </div>
-        <p className="mt-2 text-base text-gray-600 dark:text-gray-400">
+        <p className="mt-4 text-base text-zinc-900 dark:text-zinc-400">
           In my spare time, I do ui apps on the Figma and share it in the
           YouTube and Figma community.
         </p>
-        <FigmaCard
-          href="https://www.figma.com/community/file/1142551475382280571"
-          title="Food ordering application with Figma"
-        />
-        <FigmaCard
-          href="https://www.figma.com/community/file/1145399036861031714"
-          title="Vehicle hire application with Figma"
-        />
-        <FigmaCard
-          href="https://www.figma.com/community/file/1146479270942120959"
-          title="Course application with Figma"
-        />
-        <FigmaCard
-          href="https://www.youtube.com/watch?v=r55HIjY-vFs"
-          title="Figma spring animation heart"
-        />
+        <div className="mt-4">
+          <FigmaCard
+            href="https://www.figma.com/community/file/1142551475382280571"
+            title="Food ordering application with Figma"
+          />
+          <FigmaCard
+            href="https://www.figma.com/community/file/1145399036861031714"
+            title="Vehicle hire application with Figma"
+          />
+          <FigmaCard
+            href="https://www.figma.com/community/file/1146479270942120959"
+            title="Course application with Figma"
+          />
+          <FigmaCard
+            href="https://www.youtube.com/watch?v=r55HIjY-vFs"
+            title="Figma spring animation heart"
+          />
+        </div>
       </div>
     </section>
   );

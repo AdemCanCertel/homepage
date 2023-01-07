@@ -3,7 +3,6 @@ export default function figmaCard({ href, title }) {
     <a
       className="w-full"
       href={href}
-      aria-label={title}
       target="_blank"
       rel="noopener noreferrer"
     >

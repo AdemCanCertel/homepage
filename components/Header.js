@@ -13,8 +13,8 @@ const Header = () => {
 
   const nav = [
     { label: "Home", path: "/" },
+    { label: "Social", path: "/social" },
     { label: "Repository", path: "/repository" },
-    { label: "Social", path: "/social" }
   ];
   const renderThemeChanger = () => {
     if (!mounted) return null;
@@ -25,7 +25,7 @@ const Header = () => {
       return (
         <Button
           title="Theme/Dark"
-          className="w-9 h-9 dark:bg-neutral-800 hover:ring-1 ring-neutral-800 rounded-md border-none"
+          className="w-9 h-9 ring-neutral-800"
           onClick={() => setTheme("light")}
         >
           <svg
@@ -47,7 +47,7 @@ const Header = () => {
       return (
         <Button
           title="Theme/Light"
-          className="w-9 h-9 bg-gray-200 hover:ring-1 ring-neutral-200 rounded-md border-none"
+          className="w-9 h-9 ring-neutral-200 border-none"
           onClick={() => setTheme("dark")}
         >
           <svg
@@ -72,7 +72,7 @@ const Header = () => {
   return (
     <div className="pt-5 pb-5 pl-1 flex flex-col justify-center px-8">
       <header className="">
-        <nav className="flex items-center justify-between relive dark:text-neutral-400 text-neutral-400">
+        <nav className="text-zinc-900 dark:text-zinc-200 flex items-center justify-between relive">
           <div className="ml-[-0.10rem]">
             {nav.map((nav) => (
               <Link href={nav.path}>
