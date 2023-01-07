@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function SocialPage() {
   return (
     <section className="full-container">
-      <h1 className="font-bold text-xl md:text-2xl tracking-tight dark:text-neutral-400 text-neutral-500">
+      <h1 className="font-bold text-zinc-900 dark:text-zinc-300 text-2xl md:text-3xl">
         Social
       </h1>
       <Link href="https://www.instagram.com/ademcancertell/?utm_source=ademcancertel.vercel.app">
